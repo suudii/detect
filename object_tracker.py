@@ -45,7 +45,7 @@ def detect_image(img):
     # run inference on the model and get detections
     with torch.no_grad():
         detections = model(input_img)
-        detections = utils.non_max_suppression(detections, 80, conf_thres, nms_thres)
+        detections = utils.non_max_suppression(detections, 10, conf_thres, nms_thres)
     return detections[0]
 
 # load image and get detections
